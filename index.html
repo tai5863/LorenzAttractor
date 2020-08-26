@@ -62,7 +62,7 @@
           vec3 position = texelFetch(uPositionTexture, coord, 0).xyz;
 
           float dx = uDelta * (position.y - position.x);
-          float dy = position.x * (uRho - position.z);
+          float dy = position.x * (uRho - position.z) - position.y;
           float dz = position.x * position.y - uBeta * position.z;
 
           nextPosition = vec3(position.x + dx * uDeltaTime, position.y + dy * uDeltaTime, position.z + dz * uDeltaTime);
